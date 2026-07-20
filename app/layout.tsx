@@ -1,18 +1,17 @@
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
+import "./globals.css"
 
 export default function RootLayout({ children }) {
   return (
     <html>
       <body>
-        <header style={{ background: "black", color: "white", padding: "10px" }}>
-          My App Header
-        </header>
+        <Navbar/>
 
         {children}
 
-        <footer style={{ background: "gray", padding: "10px" }}>
-          My App Footer
-        </footer>
+        <Footer/>
       </body>
     </html>
   );
