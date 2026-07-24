@@ -8,6 +8,8 @@ export default function Navbar(){
       <Link href="/about" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>about</Link>
       <Link href="/contact" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>contact</Link>
       <Link href="/dashboard" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>Dashboard</Link>
+      <Link href="/users" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>user</Link>
+      <Link href="/user-server" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>user-server</Link>
     </nav>
   )
 }
