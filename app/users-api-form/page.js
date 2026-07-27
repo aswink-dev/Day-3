@@ -37,51 +37,17 @@ export default function UsersAPI() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100vh",
-        backgroundColor: "#f5f5f5",
-      }}
-    >
-      <div
-        style={{
-          width: "380px",
-          padding: "30px",
-          backgroundColor: "#fff",
-          borderRadius: "10px",
-          boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
-        }}
-      >
-        <h1
-          style={{
-            textAlign: "center",
-            marginBottom: "25px",
-          }}
-        >
-          Add User
-        </h1>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="w-[380px] p-8 bg-white rounded-xl shadow-lg">
+        <h1 className="text-center mb-6 text-2xl font-bold">Add User</h1>
 
-        <form
-          onSubmit={handleSubmit}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-          }}
-        >
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="text"
             placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            style={{
-              padding: "12px",
-              borderRadius: "6px",
-              border: "1px solid #ccc",
-            }}
+            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
 
           <input
@@ -89,11 +55,7 @@ export default function UsersAPI() {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            style={{
-              padding: "12px",
-              borderRadius: "6px",
-              border: "1px solid #ccc",
-            }}
+            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
 
           <input
@@ -101,24 +63,12 @@ export default function UsersAPI() {
             placeholder="Enter phone number"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            style={{
-              padding: "12px",
-              borderRadius: "6px",
-              border: "1px solid #ccc",
-            }}
+            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
 
           <button
             type="submit"
-            style={{
-              padding: "12px",
-              backgroundColor: "#007bff",
-              color: "#fff",
-              border: "none",
-              borderRadius: "6px",
-              cursor: "pointer",
-              fontWeight: "bold",
-            }}
+            className="p-3 bg-blue-600 text-white rounded-lg font-bold cursor-pointer border-0 hover:bg-blue-700 transition-colors"
           >
             Submit
           </button>
@@ -126,26 +76,18 @@ export default function UsersAPI() {
 
         {/* Display Submitted User */}
         {user && (
-          <div
-            style={{
-              marginTop: "25px",
-              padding: "15px",
-              backgroundColor: "#eef7ff",
-              borderRadius: "8px",
-              border: "1px solid #b6d4fe",
-            }}
-          >
-            <h3>Submitted User</h3>
+          <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <h3 className="font-semibold mb-2 text-lg">Submitted User</h3>
 
-            <p>
+            <p className="text-gray-700">
               <strong>Name:</strong> {user.name}
             </p>
 
-            <p>
+            <p className="text-gray-700">
               <strong>Email:</strong> {user.email}
             </p>
 
-            <p>
+            <p className="text-gray-700">
               <strong>Phone:</strong> {user.phone}
             </p>
           </div>

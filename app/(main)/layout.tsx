@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 import "../globals.css";
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <body>
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
-      
+       
       </body>
     </html>
   );

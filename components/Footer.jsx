@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer style={{ background: "black" }}>
-      <p style={{ color: "white", textAlign: "center" }}>all rights reserved</p>
+    <footer className="bg-black py-4">
+      <p className="text-red-400 text-center">all rights reserved</p>
     </footer>
   );
 }

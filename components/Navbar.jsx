@@ -1,17 +1,16 @@
 import Link from "next/link"
 
-
 export default function Navbar(){
   return(
-    <nav style ={{background:"black", padding: "10px"}}>
-      <Link href="/" style={{color:"red" ,padding:"10px" ,marginLeft:"20px"}}>Home</Link>
-      <Link href="/about" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>about</Link>
-      <Link href="/contact" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>contact</Link>
-      <Link href="/dashboard" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>Dashboard</Link>
-      <Link href="/users" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>user</Link>
-      <Link href="/user-server" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>user-server</Link>
-      <Link href="/users-api" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>USERS Api-GET</Link>
-      <Link href="/users-api-form" style={{color:"red", padding:"10px" ,marginLeft:"20px"}}>USERS-API- POST</Link>
+    <nav className="bg-black p-3">
+      <Link href="/" className="text-red-500 px-3 ml-5">Home</Link>
+      <Link href="/about" className="text-red-500 px-3 ml-5">about</Link>
+      <Link href="/contact" className="text-red-500 px-3 ml-5">contact</Link>
+      <Link href="/dashboard" className="text-red-500 px-3 ml-5">Dashboard</Link>
+      <Link href="/users" className="text-red-500 px-3 ml-5">user</Link>
+      <Link href="/user-server" className="text-red-500 px-3 ml-5">user-server</Link>
+      <Link href="/users-api" className="text-red-500 px-3 ml-5">USERS Api-GET</Link>
+      <Link href="/users-api-form" className="text-red-500 px-3 ml-5">USERS-API- POST</Link>
     </nav>
   )
 }

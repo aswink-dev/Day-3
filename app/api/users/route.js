@@ -1,20 +1,57 @@
-//get
+import connectDB from "../../../lib/mongodb";
+import User from "../../../models/User";
+
+// GET all users
 export async function GET() {
-  const users = [
-    { id: 1, name: "john", email: "john@gmail.com" },
-    { id: 1, name: "rahul", email: "rahul@gmail.com" },
-  ];
-  return Response.json(users);
+  try {
+    await connectDB();
+
+    const users = await User.find();
+
+    return Response.json(users, {
+      status: 200,
+    });
+  } catch (error) {
+    return Response.json(
+      {
+        message: error.message,
+      },
+      {
+        status: 500,
+      }
+    );
+  }
 }
 
-//post
-export async function POST(req) {
-  const body = await req.json();
+// POST new user
+export async function POST(request) {
+  try {
+    await connectDB();
 
-  console.log("New user:", body);
+    const body = await request.json();
 
-  return Response.json({
-    message: "User added successfully",
-    data: body,
-  });
+    const newUser = await User.create({
+      name: body.name,
+      email: body.email,
+    });
+
+    return Response.json(
+      {
+        message: "User added successfully",
+        data: newUser,
+      },
+      {
+        status: 201,
+      }
+    );
+  } catch (error) {
+    return Response.json(
+      {
+        message: error.message,
+      },
+      {
+        status: 500,
+      }
+    );
+  }
 }
