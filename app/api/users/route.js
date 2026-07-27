@@ -18,7 +18,7 @@ export async function GET() {
       },
       {
         status: 500,
-      }
+      },
     );
   }
 }
@@ -33,6 +33,7 @@ export async function POST(request) {
     const newUser = await User.create({
       name: body.name,
       email: body.email,
+      phone: body.phone,
     });
 
     return Response.json(
@@ -42,7 +43,7 @@ export async function POST(request) {
       },
       {
         status: 201,
-      }
+      },
     );
   } catch (error) {
     return Response.json(
@@ -51,7 +52,7 @@ export async function POST(request) {
       },
       {
         status: 500,
-      }
+      },
     );
   }
 }
