@@ -8,18 +8,9 @@ export async function GET() {
 
     const users = await User.find();
 
-    return Response.json(users, {
-      status: 200,
-    });
+    return Response.json(users, { status: 200 });
   } catch (error) {
-    return Response.json(
-      {
-        message: error.message,
-      },
-      {
-        status: 500,
-      },
-    );
+    return Response.json({ message: error.message }, { status: 500 });
   }
 }
 
@@ -28,12 +19,19 @@ export async function POST(request) {
   try {
     await connectDB();
 
-    const body = await request.json();
+    const { name, email, phone } = await request.json();
+
+    if (!name || !email || !phone) {
+      return Response.json(
+        { message: "All fields are required." },
+        { status: 400 },
+      );
+    }
 
     const newUser = await User.create({
-      name: body.name,
-      email: body.email,
-      phone: body.phone,
+      name,
+      email,
+      phone,
     });
 
     return Response.json(
@@ -41,18 +39,9 @@ export async function POST(request) {
         message: "User added successfully",
         data: newUser,
       },
-      {
-        status: 201,
-      },
+      { status: 201 },
     );
   } catch (error) {
-    return Response.json(
-      {
-        message: error.message,
-      },
-      {
-        status: 500,
-      },
-    );
+    return Response.json({ message: error.message }, { status: 500 });
   }
 }
